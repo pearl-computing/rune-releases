@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/pearl-computing/rune-releases/blob/main/manifest.schema.json",
+  "title": "Rune public release manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "version", "tag", "source", "workflow", "targets"],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+    "tag": { "type": "string", "pattern": "^v[0-9]+\\.[0-9]+\\.[0-9]+$" },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sha"],
+      "properties": {
+        "sha": { "type": "string", "pattern": "^[0-9a-f]{40}$" }
+      }
+    },
+    "workflow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["run_id"],
+      "properties": {
+        "run_id": { "type": "string", "pattern": "^[0-9]+$" }
+      }
+    },
+    "targets": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": { "$ref": "#/$defs/target" }
+    }
+  },
+  "$defs": {
+    "assetName": { "type": "string", "minLength": 1 },
+    "target": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["target", "archive", "checksum", "sbom", "notices", "metadata", "release_metadata", "provenance"],
+      "properties": {
+        "target": {
+          "enum": [
+            "aarch64-apple-darwin",
+            "aarch64-unknown-linux-gnu",
+            "x86_64-apple-darwin",
+            "x86_64-unknown-linux-gnu"
+          ]
+        },
+        "archive": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["name", "sha256"],
+          "properties": {
+            "name": { "$ref": "#/$defs/assetName" },
+            "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+          }
+        },
+        "checksum": { "$ref": "#/$defs/assetName" },
+        "sbom": { "$ref": "#/$defs/assetName" },
+        "notices": { "$ref": "#/$defs/assetName" },
+        "metadata": { "$ref": "#/$defs/assetName" },
+        "release_metadata": { "$ref": "#/$defs/assetName" },
+        "provenance": { "$ref": "#/$defs/assetName" }
+      }
+    }
+  }
+}
