@@ -24,9 +24,16 @@ done
 
 case "$url" in
   */releases/latest)
-    printf 'https://github.com/pearl-computing/rune-releases/releases/tag/v%s' "${RUNE_FIXTURE_LATEST_VERSION:-9.9.9}"
+    printf 'https://github.com/pearl-computing/rune-releases/releases/tag/v%s' "${RUNE_FIXTURE_LATEST_VERSION:-0.1.3}"
     ;;
   */releases/download/*)
+    release_path="${url#*/releases/download/}"
+    case "$release_path" in
+      */*/*)
+        echo "fake curl rejected nested release asset path: $url" >&2
+        exit 2
+        ;;
+    esac
     asset="${url##*/}"
     test -n "$output"
     if [ "${RUNE_FIXTURE_INTERRUPT_ASSET:-}" = "$asset" ]; then

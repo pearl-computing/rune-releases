@@ -51,6 +51,9 @@ while [ "$#" -gt 0 ]; do
   esac
 done
 
+echo "Installing Rune means that you accept the Rune Personal Use License Agreement:" >&2
+echo "https://github.com/pearl-computing/rune-releases/blob/main/LICENSE" >&2
+
 if [ -z "$version" ]; then
   latest_url="https://github.com/$repository/releases/latest"
   if ! effective_latest="$(curl --fail --silent --show-error --location \
@@ -92,7 +95,8 @@ temporary_root="$(mktemp -d "${TMPDIR:-/tmp}/rune-install.XXXXXX")" || \
   fail "cannot create temporary download directory"
 archive_name="rune-${version}-${target}.tar.gz"
 archive="$temporary_root/$archive_name"
-checksum="$archive.sha256"
+checksum_asset="$archive_name.sha256"
+checksum="$temporary_root/$checksum_asset"
 
 download() {
   download_url="$1"
@@ -110,7 +114,7 @@ download() {
 }
 
 release_base="https://github.com/$repository/releases/download/v$version"
-download "$release_base/$checksum" "$checksum"
+download "$release_base/$checksum_asset" "$checksum"
 download "$release_base/$archive_name" "$archive"
 
 set -- $(sed -n '1p' "$checksum")
