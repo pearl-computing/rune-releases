@@ -24,7 +24,7 @@ done
 
 case "$url" in
   */releases/latest)
-    printf 'https://github.com/pearl-computing/rune-releases/releases/tag/v%s' "${RUNE_FIXTURE_LATEST_VERSION:-0.1.3}"
+    printf 'https://github.com/pearl-computing/rune-releases/releases/tag/v%s' "${RUNE_FIXTURE_LATEST_VERSION:-9.9.9}"
     ;;
   */releases/download/*)
     asset="${url##*/}"

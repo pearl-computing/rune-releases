@@ -12,7 +12,7 @@ curl --fail --location --proto '=https' \
   --output install.sh \
   https://raw.githubusercontent.com/pearl-computing/rune-releases/main/install.sh
 less ./install.sh
-sh ./install.sh --version 0.1.3
+sh ./install.sh
 ```
 
 Inspect the script, choose an explicit release where reproducibility matters, and
