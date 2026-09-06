@@ -1,0 +1,67 @@
+{
+  "build": {
+    "run_id": "34024308672"
+  },
+  "schema_version": 2,
+  "source": {
+    "digest": {
+      "gitCommit": "4a59b9ab63760a164e5aec2eece71613497cc1d5"
+    }
+  },
+  "tag": "v0.1.5",
+  "targets": [
+    {
+      "archive": {
+        "name": "rune-0.1.5-aarch64-apple-darwin.tar.gz",
+        "sha256": "ceef8bfdd198a9f748efadc0d9a32a5c2ea5139561caaac40f4a7568b2dfb6df"
+      },
+      "checksum": "rune-0.1.5-aarch64-apple-darwin.tar.gz.sha256",
+      "metadata": "rune-0.1.5-aarch64-apple-darwin.metadata.json",
+      "notices": "rune-0.1.5-aarch64-apple-darwin.notices.json",
+      "provenance": "rune-0.1.5-aarch64-apple-darwin.provenance.json",
+      "release_metadata": "rune-0.1.5-aarch64-apple-darwin.release-metadata.json",
+      "sbom": "rune-0.1.5-aarch64-apple-darwin.sbom.json",
+      "target": "aarch64-apple-darwin"
+    },
+    {
+      "archive": {
+        "name": "rune-0.1.5-aarch64-unknown-linux-gnu.tar.gz",
+        "sha256": "5ab81e3ea1af2bfc1008c3f3679bfcd6060609a208a61843476ed9bee004090b"
+      },
+      "checksum": "rune-0.1.5-aarch64-unknown-linux-gnu.tar.gz.sha256",
+      "metadata": "rune-0.1.5-aarch64-unknown-linux-gnu.metadata.json",
+      "notices": "rune-0.1.5-aarch64-unknown-linux-gnu.notices.json",
+      "provenance": "rune-0.1.5-aarch64-unknown-linux-gnu.provenance.json",
+      "release_metadata": "rune-0.1.5-aarch64-unknown-linux-gnu.release-metadata.json",
+      "sbom": "rune-0.1.5-aarch64-unknown-linux-gnu.sbom.json",
+      "target": "aarch64-unknown-linux-gnu"
+    },
+    {
+      "archive": {
+        "name": "rune-0.1.5-x86_64-apple-darwin.tar.gz",
+        "sha256": "1a548eb557db64cde7aa317fd0e8fedc2a163a8fe0d626ff6bce70cbea3ab66d"
+      },
+      "checksum": "rune-0.1.5-x86_64-apple-darwin.tar.gz.sha256",
+      "metadata": "rune-0.1.5-x86_64-apple-darwin.metadata.json",
+      "notices": "rune-0.1.5-x86_64-apple-darwin.notices.json",
+      "provenance": "rune-0.1.5-x86_64-apple-darwin.provenance.json",
+      "release_metadata": "rune-0.1.5-x86_64-apple-darwin.release-metadata.json",
+      "sbom": "rune-0.1.5-x86_64-apple-darwin.sbom.json",
+      "target": "x86_64-apple-darwin"
+    },
+    {
+      "archive": {
+        "name": "rune-0.1.5-x86_64-unknown-linux-gnu.tar.gz",
+        "sha256": "50b75f10a8a440452ea7b9653bdd96894929a6291e73f994e9fdfb4f93e2ab2b"
+      },
+      "checksum": "rune-0.1.5-x86_64-unknown-linux-gnu.tar.gz.sha256",
+      "metadata": "rune-0.1.5-x86_64-unknown-linux-gnu.metadata.json",
+      "notices": "rune-0.1.5-x86_64-unknown-linux-gnu.notices.json",
+      "provenance": "rune-0.1.5-x86_64-unknown-linux-gnu.provenance.json",
+      "release_metadata": "rune-0.1.5-x86_64-unknown-linux-gnu.release-metadata.json",
+      "sbom": "rune-0.1.5-x86_64-unknown-linux-gnu.sbom.json",
+      "target": "x86_64-unknown-linux-gnu"
+    }
+  ],
+  "version": "0.1.5"
+}

@@ -1,7 +1,13 @@
 # Rune releases
 
-This repository distributes verified Rune release artifacts. It does not contain
-the Rune source code.
+This repository distributes verified Rune release artifacts built by a private,
+gated build authority. It does not contain the Rune source code.
+
+Rune remains proprietary. Read the [Rune Personal Use License Agreement](LICENSE)
+before installation. Downloading, installing, copying, or using Rune means that
+you accept that agreement.
+Rune v0.1.5 ships under the personal, non-commercial grant in the current terms.
+Rune v0.1.4 and earlier assets retain their prior stricter license terms.
 
 ## Install
 
@@ -12,7 +18,7 @@ curl --fail --location --proto '=https' \
   --output install.sh \
   https://raw.githubusercontent.com/pearl-computing/rune-releases/main/install.sh
 less ./install.sh
-sh ./install.sh
+sh ./install.sh --version 0.1.5
 ```
 
 Inspect the script, choose an explicit release where reproducibility matters, and
